@@ -1,4 +1,4 @@
-# Real-Time Benchmarking Framework for LLM Evaluation
+# Dynamic Benchmarking Framework for LLM Evaluation
 
 A Flask-based framework for evaluating Large Language Models (LLMs) using real-time weather data. This framework generates structured questions and answers from weather data and allows for LLM evaluation against these ground truth answers.
 
