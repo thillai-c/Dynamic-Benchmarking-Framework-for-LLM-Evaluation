@@ -1,4 +1,4 @@
-# Real-Time Benchmarking Framework for LLM Evaluation
+# Dynamic Benchmarking Framework for LLM Evaluation
 
 ## About
 
@@ -147,9 +147,6 @@ The framework uses Google's Gemini model to:
 4. Push to the branch
 5. Create a Pull Request
 
-## License
-
-[Add your license information here]
 
 ## Acknowledgments
 
