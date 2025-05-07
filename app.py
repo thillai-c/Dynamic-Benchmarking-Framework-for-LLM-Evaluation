@@ -5,11 +5,17 @@ import json
 from flask import Response
 import os
 import google.generativeai as genai
+from dotenv import load_dotenv
+
 app = Flask(__name__)
 from flask import session
+
+# Load environment variables
+load_dotenv()
+
 # Configure API key authorization for WeatherAPI
 configuration = weatherapi.Configuration()
-configuration.api_key['key'] = '0094f51698944c18b46211853240112'
+configuration.api_key['key'] = os.getenv('WEATHER_API_KEY')
 api_instance = weatherapi.APIsApi(weatherapi.ApiClient(configuration))
 questions_json=""
 
@@ -184,7 +190,7 @@ def download_file(filename):
         return jsonify({'error': 'File not found'}), 404
     
 # Configure Gemini API
-genai.configure(api_key="AIzaSyB9LBoBjEQt8yXyPT0Yfvv1rxOlIo_rrn8")
+genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 model = genai.GenerativeModel('gemini-1.5-flash', generation_config={"response_mime_type": "application/json"})
 
 # Function to load questions from question.json
