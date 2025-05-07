@@ -83,6 +83,53 @@ Each Q&A pair includes:
 - Answer with appropriate units
 - Timestamp and location information
 
+### Data Format
+
+The framework supports two output formats designed for effective LLM evaluation:
+
+1. **Question-Only Format**
+This format allows the model to focus solely on response generation without pre-answered data:
+
+```json
+[
+  {
+    "question": "What time did the sun rise in Salt Lake City on 2024-11-21?"
+  },
+  {
+    "question": "What time did the moon rise in Salt Lake City on 2024-11-21?"
+  },
+  {
+    "question": "What is the current weather condition in Salt Lake City?"
+  }
+]
+```
+
+2. **Question-Answer Pairs Format**
+This format includes the correct answers for evaluation:
+
+```json
+[
+  {
+    "question": "What time did the sun rise in Salt Lake City on 2024-11-21?",
+    "answer": "7:21 AM"
+  },
+  {
+    "question": "What time did the moon rise in Salt Lake City on 2024-11-21?",
+    "answer": "11:14 AM"
+  },
+  {
+    "question": "What is the current weather condition in Salt Lake City?",
+    "answer": "Partly cloudy"
+  }
+]
+```
+
+This structured format facilitates:
+- Direct evaluation of model response accuracy
+- Clear benchmarking against ground truth data
+- Consistent evaluation across different weather parameters
+- Dynamic data-based response assessment
+
 ## LLM Evaluation
 
 The framework uses Google's Gemini model to:
